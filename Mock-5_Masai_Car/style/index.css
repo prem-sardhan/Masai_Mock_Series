@@ -1,0 +1,12 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+nav{
+    border:  1px solid red;
+    padding: 15px;
+    display: flex;
+    background-color: teal;
+    overflow: hidden;
+}

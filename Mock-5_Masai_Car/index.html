@@ -8,12 +8,85 @@
     <link rel="stylesheet" href="./style/index.css">
 </head>
 <body>
-    <nav>
+    <nav>   
         <div class="logo">
-            <a href="index.html">Masai Carwale</a>
+            <a href="index.html">
+                <img  src="https://cdn.cdnlogo.com/logos/m/55/mercedes-benz.svg" alt=""></a>
         </div>
 
+     <ul>
+        <li><a href="./cars.html">My Cars</a></li>
+
+        <li><a href="./wishlist.html">Wishlist</a></li>
+     </ul>
+
     </nav>
+
+    <form onsubmit="handleform(event)">
+        <h2>Add New Car</h2>
+
+        <div>
+            <label for="brand">Brand</label>
+            <select name="" id="Brand">
+                <option value="" selected="true" disabled="disabled">Type Brand</option>
+
+                <option value="tata">Tata</option>
+                <option value="maruti">Maruti</option>
+                <option value="mahindra">Mahindra</option>
+                <option value="ford">Ford</option>
+                <option value="tesla">Tesla</option>
+                <option value="bmw">BMW</option>
+            </select>
+        </div>
+
+        <div>
+
+            <label for="type">Type</label>
+            <select name="" id="Type">
+                <option value="Type" selected="true" disabled="disabled">Select Type</option>
+                <option value="Manual">Manual</option>
+                <option value="Automatic">Automatic</option>
+               
+
+
+            </select>
+        </div>
+
+        <div>
+            <label for="Purchase Year">Purchase Year</label>
+            <select name="" id="Year">
+                <option value="" selected="true" disabled="disabled">Purchase Year</option>
+                <option value="2017">2017</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="km">KM driven</label>
+            <input type="number" id="km">
+        </div>
+        <div>
+            <label for="Description">Description</label>
+            <input type="text" id="Description">
+        </div>
+
+        <div>
+            <label for="Price">Price</label>
+            <input type="number" id="Price">
+        </div>
+        <input type="submit">
+
+
+
+        
+    
+    
+    
+    </form>
     
 </body>
 </html>
+<script src="./script/index.js"></script>

@@ -1,0 +1,70 @@
+
+
+#query{
+   
+    display: flex;
+    
+    padding: 20px 20%;
+    justify-content: space-around;
+}
+
+#query select{
+    
+    outline: none;
+    border: none;
+    font-size: large;
+    pad: 5px 5px;
+   color: teal;
+   font-weight: bold;
+
+}
+
+#container{
+    border: 1px solid red;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+    padding: 20px 20px;
+    
+}
+#container .card{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+    padding: 10px 10px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#container .card{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+    padding: 10px 10px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+#container .card img{
+    width: 100%;
+    border-radius: 10px;
+}
+#container .card .child-div{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+   
+}
+#container .card .child-div{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+   
+}
+#container .card .child-div i{
+    color: red;
+}
+#container .card .brand{
+    color: teal
+}

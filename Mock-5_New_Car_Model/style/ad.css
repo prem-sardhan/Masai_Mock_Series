@@ -1,0 +1,53 @@
+#form-section{
+    padding: 2% 20%;
+    
+   
+}
+#form-section form{
+    display: grid;
+    gap: 20px;
+    width: 50%;
+    margin: auto;
+    
+ }
+ #form-section form select{
+    font-size: large;
+   border: 2px solid teal;
+    padding: 10px 20px;
+    background-color: rgb(139, 132, 128);
+    border-radius: 30px;
+    
+ }
+ #form-section form input {
+   
+    font-size: larger;
+    border-radius: 10px;
+    border: solid teal;
+    padding: 10px 20px;
+    
+    
+ }
+ #form option{
+    border: 1px solid red;
+    background-color:rgb(196, 199, 202);
+    color: black;
+    border: none;
+ }
+
+ #form-section form button {
+    font-size: larger;
+    border-radius: 10px;
+    background-color: rgb(238, 229, 229);
+    padding: 10px 20px;
+    border: none;
+
+ }
+ #form-section form button:hover{
+    cursor: pointer;
+    background-color: rgb(149, 199, 199);
+   border: 4px dotted teal;
+    
+
+ }
+
+ 

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart Page</title>
+
+    <style>
+       * {
+        padding: 0px;
+        margin: 0px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .nav {
+      
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 10px;
+        margin-bottom: 20px;
+        background-color:rgb(176,0,32);
+      }
+      .nav > a {
+        text-decoration: none;
+        font-size: 25px;
+        font-weight: bold;
+        color: white;
+      }
+      
+      h1 {
+        margin: auto;
+        text-align: center;
+      }
+      #cart-container {
+        display: grid;
+        width: 90%;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 420px);
+        margin: auto;
+        gap: 30px;
+        margin-top: 30px;
+      }
+      #cart-container > div {
+        
+        padding: 10px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        border-radius: 10px;
+        background-color: rgb(242,231,254);
+      }
+      #cart-container > div > p:nth-child(1) {
+        text-align: center;
+      }
+      #cart-container > div > img {
+        display: block;
+        width: 260px;
+        height: 200px;
+        margin: auto;
+        /* border: 1px solid gray; */
+        margin-top: 5px;
+      }
+      #cart-container > div > p {
+        font-weight: bold;
+        padding-top: 10px;
+        font-size: 15px;
+        
+      }
+      #cart-container > div >span {
+        color: brown;
+        margin-left: 10px;
+        margin-top: -30px;
+        display: inline-block;
+        /* border: 1px solid red; */
+        font-weight: bold;
+      }
+      #cart-container > div > button:nth-child(5) {
+        padding: 5px 5px;
+        margin-top: 10px;
+        background-color: white;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      #cart-container > div > button:nth-child(7) {
+        padding: 5px 8px;
+        margin-top: -35px;
+        margin-left: 5px;
+        background-color: white;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      #cart-container > div > button:nth-child(8) {
+        padding: 5px 8px;
+        margin-left: 10px;
+        font-weight: bold;
+        background-color: rgb(11, 231, 231);
+        border-radius: 5px;
+        cursor: pointer;
+        color: white;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <a href="./index.html">Home</a>
+      <a href="./cart.html">Cart</a>
+      <a href="./payment.html">Payment</a>
+    </div>
+    <div>
+      <h1>Your Total cart Price is:- <span id="cart-total">0</span></h1>
+      <input type="text" id="cupon-filled" placeholder="masai30" />
+      <button id="cupon-active">Submit</button>
+    </div>
+    <div id="cart-container">
+      <!-- Here Append All the cart Products  -->
+    </div>
+  </body>
+  <script>
+     let cartdata=JSON.parse(localStorage.getItem("cart"))||[];
+    let container = document.getElementById("cart-container")
+    let parent=document.getElementById("total")
+
+    let totalprice=document.getElementById("cart-total")
+    let newprice=0
+    
+    displayproducts(cartdata)
+
+    function displayproducts(cartdata){
+      container.innerHTML=null
+      cartdata.forEach((element,index) => {
+      let div=document.createElement("div")
+      let img = document.createElement("img")
+      img.src=element.image_url
+      let brand = document.createElement("h3")
+      brand.innerText=element.name
+      let price=document.createElement("p")
+      price.innerText=element.price
+      let details = document.createElement("p")
+      details.innerText=element.strikedoffprice
+      let quantity=document.createElement("p")
+      quantity.innerText=element.quantity
+      let increment=document.createElement("button")
+      increment.innerText="+"
+      increment.addEventListener("click",()=>{
+          newprice-=(quantity.innerText*element.price);
+          quantity.innerText++;
+          newprice+=(element.price*quantity.innerText);
+          totalprice.innerText = newprice;
+      })
+      let decrement=document.createElement("button")
+      decrement.innerText="-"
+      decrement.addEventListener("click",()=>{
+        if(quantity.innerText>1)
+          {
+            newprice-=(element.price*quantity.innerText);
+            quantity.innerText--;
+            newprice+=(element.price*quantity.innerText);
+            totalprice.innerText = newprice;
+            }       
+      })
+      newprice+=(element.price*quantity.innerText);
+        totalprice.innerText = newprice;
+
+      div.append(img,brand,price,details,increment,quantity,decrement)
+        container.append(div)
+      
+      });
+
+    }
+  
+  let coupon=document.getElementById("cupon-filled")
+  let couponbtn=document.getElementById("cupon-active")
+    
+  couponbtn.addEventListener("click",()=>{
+    if(coupon.value=="masai30")
+    {
+          totalprice.innerText = Math.floor(totalprice.innerText*0.3)
+    }
+    coupon.value=""
+         
+      })
+  </script>
+</html>

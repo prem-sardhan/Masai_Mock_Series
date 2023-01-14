@@ -1,0 +1,130 @@
+.App {
+  text-align: center;
+}
+
+.home {
+  margin: 100px auto;
+  display: fex;
+  gap: 30px;
+  text-align: center;
+}
+
+.home button {
+  border: 3px dotted orangered;
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+}
+
+.home button:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+.form {
+
+  background-color: rgb(109, 78, 67);
+  margin: 50px auto;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 30px;
+  width: 30%;
+  border: 3px dotted black;
+
+}
+
+.form>div {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px;
+}
+
+input[type="submit"] {
+  background-color: rgb(95, 57, 44);
+  color: aliceblue;
+  padding: 5px 155px;
+  border: 2px dotted orangered;
+}
+
+input[type="submit"]:hover {
+  background-color: aliceblue;
+  color: #333;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.navbar {
+  background-image: linear-gradient(black, orangered);
+  color: black;
+  padding: 20px 40px;
+  justify-content: flex-end;
+  display: flex;
+  gap: 60px;
+  font-size: 40px;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+a:hover {
+  color: black;
+}
+.card{
+  box-shadow: rgba(155, 87, 41, 0.25) 0px 50px 100px -20px, rgba(104, 37, 11, 0.3) 0px 30px 60px -30px, rgba(172, 78, 23, 0.35) 0px -2px 6px 0px inset;
+}
+.card img {
+  width: 100px;
+  height: 100px;
+}
+
+.card >div {
+  border: 2px dotted orangered;
+  
+  
+  padding: 20px;
+  line-height: 0px;
+  display: flex;
+  flex-direction: column;
+  gap: -200px;
+}
+
+.grid {
+  width:80%;
+  margin: 60px auto;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 20px;
+}
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.load-circle {
+  margin: 30px auto;
+  width: 50px;
+  height: 50px;
+  border: 10px solid #f3f3f3; 
+  border-radius: 50%;
+  animation: spinner 1.5s linear infinite;
+}
+.table table{
+width:25%;
+margin: 50px auto;
+
+}
+.table tr td{
+  border: 1px dotted orangered;
+border-collapse: collapse;
+padding: 10px;
+}

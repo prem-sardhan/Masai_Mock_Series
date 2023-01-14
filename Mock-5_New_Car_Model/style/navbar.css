@@ -1,0 +1,38 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+#navbar{
+    display: flex;
+   
+    padding: 20px 20%;
+   
+    justify-content: space-around;
+    background-color: black;
+}
+#navbar>div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    color: white;
+}
+#navbar div>i{
+    color: white;
+}
+
+#navbar div>img{
+  
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 8%;
+    top: 3px;
+}
+#navbar div a{
+    text-decoration: none;
+    color:rgb(13, 189, 189);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    font-size: larger;
+}
